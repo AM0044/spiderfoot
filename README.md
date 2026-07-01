@@ -9,7 +9,7 @@
 [![Codecov](https://codecov.io/github/smicallef/spiderfoot/coverage.svg)](https://codecov.io/github/smicallef/spiderfoot)
 [![Twitter Follow](https://img.shields.io/twitter/follow/spiderfoot?label=follow&style=social)](https://twitter.com/spiderfoot)
 [![Discord](https://img.shields.io/discord/770524432464216074)](https://discord.gg/vyvztrG)
-[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/AM0044/spiderfoot_internal/badge)](https://scorecard.dev/viewer/?uri=github.com/AM0044/spiderfoot_internal)
+[![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/AM0044/spiderfoot/badge)](https://scorecard.dev/viewer/?uri=github.com/AM0044/spiderfoof)
 
 **SpiderFoot** is an open source intelligence (OSINT) automation tool. It integrates with just about every data source available and utilises a range of methods for data analysis, making that data easy to navigate. 
 
