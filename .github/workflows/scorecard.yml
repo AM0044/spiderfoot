@@ -1,23 +1,19 @@
-# OpenSSF Scorecard — automated security-health scoring + badge.
+# OpenSSF Scorecard for a PUBLIC repo.
 #
-# This MUST be a standalone workflow. When publish_results: true (required for
-# the badge), the Scorecard API rejects workflows that have top-level env vars,
-# workflow-level write permissions, or non-approved actions — so it cannot be
-# merged into the SSCV/osv-scanner workflow.
+# Uses the official Scorecard Action: runs the checks, publishes the result to
+# the public scorecard.dev viewer, and powers the README badge. No personal
+# access token needed — publishing uses a short-lived OIDC token.
 #
-# Actions are pinned to full commit SHAs (with version comments so Dependabot
-# can bump them). Verify/refresh pins from each action's releases page.
+# Actions are pinned to commit SHAs (version in the comment) so Dependabot can
+# bump them safely.
 name: OpenSSF Scorecard
 
 on:
-  # Re-score when branch protection changes (a Scorecard input), weekly, and on
-  # pushes to the default branch. Publishing only supports push + schedule on
-  # the default branch.
-  branch_protection_rule:
+  branch_protection_rule:      # re-score when branch protection changes
   schedule:
-    - cron: "0 7 * * 2"   # Tuesdays 07:00 UTC
+    - cron: "0 7 * * 2"        # Tuesdays 07:00 UTC
   push:
-    branches: [ main ]    # <-- set to your default branch if not "main"
+    branches: [ master ]       # <-- your default branch (change if not master)
 
 # Read-only at the workflow level (required by the publish API).
 permissions: read-all
@@ -27,8 +23,8 @@ jobs:
     name: Scorecard analysis
     runs-on: ubuntu-latest
     permissions:
-      security-events: write   # upload SARIF to the Security > Code scanning tab
-      id-token: write          # OIDC token proving result authenticity (badge)
+      security-events: write   # upload results to Security > Code scanning
+      id-token: write          # OIDC token that authenticates the published result
       contents: read
     steps:
       - name: Checkout code
@@ -41,11 +37,8 @@ jobs:
         with:
           results_file: results.sarif
           results_format: sarif
-          # Publishing is what backs the README badge and feeds the public
-          # scorecard.dev viewer. Set to false if you do NOT want results public.
-          publish_results: true
+          publish_results: true   # backs the badge + public viewer
 
-      # Keep the raw results as a downloadable artifact (audit trail).
       - name: Upload artifact
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:
@@ -53,7 +46,6 @@ jobs:
           path: results.sarif
           retention-days: 90
 
-      # Surface findings in Security > Code scanning alerts, each with a fix hint.
       - name: Upload SARIF to code scanning
         uses: github/codeql-action/upload-sarif@8aad20d150bbac5944a9f9d289da16a4b0d87c1e # v4.36.2
         with:
