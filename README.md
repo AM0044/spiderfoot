@@ -1,9 +1,5 @@
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/AM0044/spiderfoot/master/LICENSE)
-[![Python Version](https://img.shields.io/badge/python-3.7+-green)](https://www.python.org)
-[![Stable Release](https://img.shields.io/badge/version-4.0-blue.svg)](https://github.com/AM0044/spiderfoot/releases/tag/v4.0)
-[![CI status](https://github.com/AM0044/spiderfoot/workflows/Tests/badge.svg)](https://github.com/AM0044/spiderfoot/actions?query=workflow%3A"Tests")
 [![Last Commit](https://img.shields.io/github/last-commit/AM0044/spiderfoot)](https://github.com/AM0044/spiderfoot/commits/master)
-[![Codecov](https://codecov.io/github/AM0044/spiderfoot/coverage.svg)](https://codecov.io/github/AM0044/spiderfoot)
 [![OpenSSF Scorecard](https://api.scorecard.dev/projects/github.com/AM0044/spiderfoot/badge)](https://scorecard.dev/viewer/?uri=github.com/AM0044/spiderfoot)
 
 **About**
