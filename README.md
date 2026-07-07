@@ -15,7 +15,9 @@ This fork exists to trim the project down to a minimal, working baseline and the
 This fork tracks its own path and does not aim to stay in sync.
 
 **Current focus**
-- Removing deployment scaffolding so the core runs as a plain Python app.
+- Temporarily removing deployment scaffolding (Docker, etc.) so the core runs as
+a plain Python app. It will be reintroduced and rebuilt against the updated
+structure once the main app is in a stable place.
 - Reviewing and updating outdated or vulnerable dependencies.
 - Resetting stale docs (this file replaces the old README).
 
