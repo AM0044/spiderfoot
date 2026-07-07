@@ -1,0 +1,40 @@
+# Dependabot configuration
+# Docs: https://docs.github.com/code-security/dependabot/dependabot-version-updates
+version: 2
+
+updates:
+  # --- Python dependencies ---------------------------------------------------
+  # Covers every requirements file in the repo:
+  #   /                    -> requirements.txt        (runtime dependencies)
+  #   /test                -> test/requirements.txt   (pytest, flake8, plugins)
+  #   /test/acceptance     -> test/acceptance/requirements.txt (robotframework)
+  - package-ecosystem: "pip"
+    directories:
+      - "/"
+      - "/test"
+      - "/test/acceptance"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      # Batch minor/patch bumps into one PR to keep the noise down while the
+      # codebase is being cleaned up. Majors still come as individual PRs.
+      python-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+
+  # --- GitHub Actions --------------------------------------------------------
+  # Keeps the SHA-pinned actions in .github/workflows/ current. Dependabot
+  # updates the pinned commit SHA and the trailing "# vX" comment together,
+  # so you keep the security of SHA pinning without manual maintenance.
+  - package-ecosystem: "github-actions"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    groups:
+      github-actions:
+        update-types:
+          - "minor"
+          - "patch"
