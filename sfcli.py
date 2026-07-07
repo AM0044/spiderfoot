@@ -1351,6 +1351,8 @@ class SpiderFootCli(cmd.Cmd):
         """shell
         Run a shell command locally."""
         self.dprint("Running shell command:" + str(line))
+        if not re.match(r'^[a-zA-Z0-9_\-/\\]+$', line):
+            raise ValueError("Invalid line")
         self.dprint(os.popen(line).read(), plain=True)  # noqa: DUO106
 
     def do_clear(self, line):
