@@ -16,7 +16,7 @@ on:
     branches: [ master ]       # <-- your default branch (change if not master)
 
 # Read-only at the workflow level (required by the publish API).
-permissions: read-all
+permissions: {}
 
 jobs:
   analysis:
