@@ -22,6 +22,7 @@ import shlex
 import sys
 import time
 from os.path import expanduser
+from urllib.parse import urlparse, urlunparse
 
 import requests
 
@@ -344,6 +345,24 @@ class SpiderFootCli(cmd.Cmd):
         # print("time: " + str(time.time() - ts))
         return ''.join(out)
 
+    def _validate_url(self, url: str) -> str:
+        try:
+            # Minimal path validation
+            if "/../" in url or re.search(r"/%2e%2e/", url, re.IGNORECASE):
+                raise ValueError("Invalid path")
+            
+            parsed = urlparse(url)
+            
+            # Protocol + host checks
+            if parsed.scheme not in ("http", "https"):
+                raise ValueError("Invalid protocol")
+            if not parsed.hostname:
+                raise ValueError("Invalid host")
+            
+            return urlunparse(parsed)
+        except Exception:
+            raise ValueError("Invalid URL")
+
     # Make a request to the SpiderFoot server
     def request(self, url, post=None):
         if not url:
@@ -352,6 +371,12 @@ class SpiderFootCli(cmd.Cmd):
 
         if not isinstance(url, str):
             self.edprint(f"Invalid request URL: {url}")
+            return None
+
+        try:
+            url = self._validate_url(url)
+        except ValueError as e:
+            self.edprint(f"Invalid request URL: {e}")
             return None
 
         # logging.basicConfig()
