@@ -195,6 +195,7 @@ class SpiderFootHelpers():
         if not os.path.isdir(path):
             raise ValueError(f"Correlations directory does not exist: {path}")
 
+        base_real = os.path.realpath(path)
         correlationRulesRaw: typing.Dict[str, str] = dict()
         for filename in os.listdir(path):
             if not filename.endswith(".yaml"):
@@ -203,7 +204,11 @@ class SpiderFootHelpers():
                 continue
 
             ruleName = filename.split('.')[0]
-            with open(path + filename, 'r') as f:
+            file_path = os.path.join(path, filename)
+            target_real = os.path.realpath(file_path)
+            if os.path.commonpath([base_real, target_real]) != base_real:
+                raise ValueError("Invalid file path")
+            with open(target_real, 'r') as f:
                 correlationRulesRaw[ruleName] = f.read()
 
         return correlationRulesRaw
