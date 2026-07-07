@@ -6,23 +6,36 @@ on:
   pull_request:
     branches: master
 
+# Minimal default token permissions (Scorecard: Token-Permissions).
+permissions:
+  contents: read
+
 jobs:
   build:
 
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        python-version: ["3.7", "3.8", "3.9", "3.10"]
+        # NOTE: 3.7 and 3.8 are end-of-life and are NOT available on current
+        # ubuntu-latest runners, which was breaking CI. Original matrix was
+        # ["3.7", "3.8", "3.9", "3.10"]. Adjust this to whatever Python range
+        # this fork officially supports (keep it in sync with the README badge).
+        python-version: ["3.9", "3.10", "3.11", "3.12"]
         os: [ubuntu-latest, macos-latest]
 
     steps:
-      - uses: actions/checkout@v2
+      # Actions pinned to full commit SHA (Scorecard: Pinned-Dependencies)
+      # and upgraded from deprecated Node-16 majors.
+      - uses: actions/checkout@34e114876b0b11c390a56381ad16ebd13914f8d5 # v4
       - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065 # v5
         with:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
+          # These pip installs are still unpinned (Scorecard alerts #24-26).
+          # Full resolution requires hash-pinning; deferred as low priority
+          # for dev-only CI.
           python -m pip install --upgrade pip
           pip install flake8 pytest
           pip install -r test/requirements.txt
@@ -33,7 +46,7 @@ jobs:
       - name: Test with pytest
         run: |
           python -m pytest -n auto --dist loadfile --ignore=test/integration/modules/ --durations=5 --cov-report term --cov=. .
-      - uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@0fb7174895f61a3b6b78fc075e0cd60383518dac # v5
         with:
           fail_ci_if_error: false
           verbose: true
