@@ -8,9 +8,7 @@ mapping. It collects data about a target (domains, IPs, emails, names, and more)
 by running a large set of independent collection **modules** and correlating what
 they find.
 
-This fork exists to **trim the project down to a minimal, working baseline** and
-then rebuild outward deliberately, rather than carrying the full upstream surface
-area and its accumulated dead weight.
+This fork exists to trim the project down to a minimal, working baseline and then rebuild outward deliberately, keeping the core lean and focused rather than carrying the full breadth of upstream's feature set from the start.
 
 **Upstream project**
 [`smicallef/spiderfoot`](https://github.com/smicallef/spiderfoot).
