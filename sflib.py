@@ -159,6 +159,10 @@ class SpiderFoot:
             fname = val.split('@')[1]
             self.info(f"Loading configuration data from: {fname}")
 
+            if ".." in fname:
+                self.error("Invalid file path")
+                return None
+
             try:
                 with open(fname, "r") as f:
                     return f.read()
