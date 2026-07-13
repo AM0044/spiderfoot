@@ -1,0 +1,159 @@
+diff --git a/modules/sfp_filemeta.py b/modules/sfp_filemeta.py
+index 1bfd8f4..a1312c4 100644
+--- a/modules/sfp_filemeta.py
++++ b/modules/sfp_filemeta.py
+@@ -14,7 +14,7 @@
+ import io
+ import mimetypes
+ 
+-import PyPDF2
++import pypdf
+ 
+ import docx
+ 
+@@ -106,8 +106,8 @@ class sfp_filemeta(SpiderFootPlugin):
+                     try:
+                         raw = io.BytesIO(ret['content'])
+                         # data = metapdf.MetaPdfReader().read_metadata(raw)
+-                        pdf = PyPDF2.PdfFileReader(raw, strict=False)
+-                        data = pdf.getDocumentInfo()
++                        pdf = pypdf.PdfReader(raw, strict=False)
++                        data = pdf.metadata
+                         meta = str(data)
+                         self.debug("Obtained meta data from " + eventData)
+                     except Exception as e:
+@@ -176,7 +176,7 @@ class sfp_filemeta(SpiderFootPlugin):
+                         return
+ 
+                     for v in val:
+-                        if v and not isinstance(v, PyPDF2.generic.NullObject):
++                        if v and not isinstance(v, pypdf.generic.NullObject):
+                             self.debug("VAL: " + str(val))
+                             # Strip non-ASCII
+                             v = ''.join([i if ord(i) < 128 else ' ' for i in v])
+diff --git a/requirements.txt b/requirements.txt
+index cd65eab..fe3f909 100644
+--- a/requirements.txt
++++ b/requirements.txt
+@@ -3,27 +3,22 @@ dnspython==2.6.1
+ ExifRead>=2.3.2,<3
+ CherryPy>=18.8.0,<19
+ cherrypy-cors>=1.6,<2
+-Mako>=1.2.4,<2
+-beautifulsoup4>=4.11.2,<5
+-lxml>=4.9.2,<5
+-netaddr>=0.8.0,<1
++Mako==1.3.12
++beautifulsoup4>=4.12.3,<5
++lxml==6.1.0
++netaddr>=1.2.1,<2
+ pysocks>=1.7.1,<2
+-requests>=2.28.2,<3
++requests>=2.32.3,<3
+ ipwhois>=1.1.0,<1.2.0
+-ipaddr>=2.2.0,<3
+-phonenumbers>=8.13.6,<9
+-pygexf>=0.2.2,<0.3
+-PyPDF2>=1.28.6,<2
++phonenumbers>=8.13.6,<10
++pypdf>=4.2.0,<7
+ python-whois>=0.7.3,<0.8
+-secure>=0.3.0,<0.4.0
+-pyOpenSSL>=21.0.0,<22
+-python-docx>=0.8.11,<0.9
+-python-pptx>=0.6.21,<0.7
+-networkx>=2.6.3,<2.7
+-cryptography>=3.4.8,<4
+-publicsuffixlist>=0.9.3,<0.10
+-openpyxl>=3.1.1,<4
+-pyyaml>=6.0.0,<7
+-
+-mako==1.3.12
+-lxml==6.1.0
++secure>=2.0.1,<3
++pyOpenSSL>=24.2.1,<26
++python-docx>=1.1.2,<2
++python-pptx>=1.0.2,<2
++networkx>=3.2,<4
++cryptography>=43.0.1,<47
++publicsuffixlist>=0.9.3,<2
++openpyxl>=3.1.2,<4
++pyyaml>=6.0.1,<7
+diff --git a/sflib.py b/sflib.py
+index 986af48..e99b465 100644
+--- a/sflib.py
++++ b/sflib.py
+@@ -798,7 +798,7 @@ class SpiderFoot:
+             return False
+         if netaddr.IPAddress(ip).is_multicast():
+             return False
+-        if netaddr.IPAddress(ip).is_private():
++        if netaddr.IPAddress(ip).is_ipv4_private_use() or netaddr.IPAddress(ip).is_ipv6_unique_local() or netaddr.IPAddress(ip).is_link_local():
+             return False
+         return True
+ 
+@@ -998,8 +998,7 @@ class SpiderFoot:
+         if isinstance(rawcert, str):
+             rawcert = rawcert.encode('utf-8')
+ 
+-        from cryptography.hazmat.backends.openssl import backend
+-        cert = cryptography.x509.load_pem_x509_certificate(rawcert, backend)
++        cert = cryptography.x509.load_pem_x509_certificate(rawcert)
+         sslcert = OpenSSL.crypto.load_certificate(OpenSSL.crypto.FILETYPE_PEM, rawcert)
+         sslcert_dump = OpenSSL.crypto.dump_certificate(OpenSSL.crypto.FILETYPE_TEXT, sslcert)
+ 
+@@ -1014,8 +1013,8 @@ class SpiderFoot:
+ 
+         # Expiry info
+         try:
+-            notafter = datetime.strptime(sslcert.get_notAfter().decode('utf-8'), "%Y%m%d%H%M%SZ")
+-            ret['expiry'] = int(notafter.strftime("%s"))
++            notafter = cert.not_valid_after_utc
++            ret['expiry'] = int(notafter.timestamp())
+             ret['expirystr'] = notafter.strftime("%Y-%m-%d %H:%M:%S")
+             now = int(time.time())
+             warnexp = now + (expiringdays * 86400)
+@@ -1134,7 +1133,7 @@ class SpiderFoot:
+         if not self.validIP(ip) and not self.validIP6(ip):
+             return False
+ 
+-        if netaddr.IPAddress(ip).is_private():
++        if netaddr.IPAddress(ip).is_ipv4_private_use() or netaddr.IPAddress(ip).is_ipv6_unique_local() or netaddr.IPAddress(ip).is_link_local():
+             return True
+ 
+         if netaddr.IPAddress(ip).is_loopback():
+@@ -1175,7 +1174,7 @@ class SpiderFoot:
+ 
+         # Never proxy RFC1918 addresses on the LAN or the local network interface
+         if self.validIP(host):
+-            if netaddr.IPAddress(host).is_private():
++            if netaddr.IPAddress(host).is_ipv4_private_use() or netaddr.IPAddress(host).is_ipv6_unique_local() or netaddr.IPAddress(host).is_link_local():
+                 return False
+             if netaddr.IPAddress(host).is_loopback():
+                 return False
+diff --git a/sfwebui.py b/sfwebui.py
+index 680f8cd..d8d672c 100644
+--- a/sfwebui.py
++++ b/sfwebui.py
+@@ -118,7 +118,7 @@ class SpiderFootWebUi:
+ 
+         cherrypy.config.update({
+             "tools.response_headers.on": True,
+-            "tools.response_headers.headers": secure_headers.framework.cherrypy()
++            "tools.response_headers.headers": list(secure_headers.header_items())
+         })
+ 
+     def error_page(self: 'SpiderFootWebUi') -> None:
+diff --git a/spiderfoot/helpers.py b/spiderfoot/helpers.py
+index addc2c9..3490d8b 100644
+--- a/spiderfoot/helpers.py
++++ b/spiderfoot/helpers.py
+@@ -421,7 +421,7 @@ class SpiderFootHelpers():
+ 
+         for d in wordlists:
+             try:
+-                with resources.open_text('spiderfoot.dicts', f"{d}.txt", errors='ignore') as dict_file:
++                with resources.files('spiderfoot.dicts').joinpath(f"{d}.txt").open('r', errors='ignore') as dict_file:
+                     for w in dict_file.readlines():
+                         words.add(w.strip().lower().split('/')[0])
+             except BaseException as e:
