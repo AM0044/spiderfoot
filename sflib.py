@@ -26,7 +26,6 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from copy import deepcopy
-from datetime import datetime
 
 import cryptography
 import dns.resolver

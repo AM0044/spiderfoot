@@ -350,15 +350,15 @@ class SpiderFootCli(cmd.Cmd):
             # Minimal path validation
             if "/../" in url or re.search(r"/%2e%2e/", url, re.IGNORECASE):
                 raise ValueError("Invalid path")
-            
+
             parsed = urlparse(url)
-            
+
             # Protocol + host checks
             if parsed.scheme not in ("http", "https"):
                 raise ValueError("Invalid protocol")
             if not parsed.hostname:
                 raise ValueError("Invalid host")
-            
+
             return urlunparse(parsed)
         except Exception:
             raise ValueError("Invalid URL")

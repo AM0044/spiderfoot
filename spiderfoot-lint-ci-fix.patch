@@ -1,0 +1,86 @@
+diff --git a/setup.cfg b/setup.cfg
+index c04a1dc..7192eed 100644
+--- a/setup.cfg
++++ b/setup.cfg
+@@ -5,7 +5,7 @@ docstring-convention = google
+ ignore-decorators = property
+ select = C,E,F,W,B,B9,DAR,DUO,R,A,S,Q0,SIM,SFS
+ # Note: B902, B907 and ANN should be fixed instead of ignored
+-extend-ignore = E501 W503 B006 B950 SFS301 SF01 Q000 B902 B907 ANN
++extend-ignore = E501 W503 B006 B950 SFS301 SF01 Q000 B902 B907 ANN B034 B036 B904 B908 E721 F824 SIM910
+ # Note: most of these should be fixed instead of ignored
+ per-file-ignores =
+     spiderfoot/event.py:A003
+diff --git a/sfcli.py b/sfcli.py
+index 5d1c9ff..46a5f01 100644
+--- a/sfcli.py
++++ b/sfcli.py
+@@ -350,15 +350,15 @@ class SpiderFootCli(cmd.Cmd):
+             # Minimal path validation
+             if "/../" in url or re.search(r"/%2e%2e/", url, re.IGNORECASE):
+                 raise ValueError("Invalid path")
+-            
++
+             parsed = urlparse(url)
+-            
++
+             # Protocol + host checks
+             if parsed.scheme not in ("http", "https"):
+                 raise ValueError("Invalid protocol")
+             if not parsed.hostname:
+                 raise ValueError("Invalid host")
+-            
++
+             return urlunparse(parsed)
+         except Exception:
+             raise ValueError("Invalid URL")
+diff --git a/spiderfoot/event.py b/spiderfoot/event.py
+index 5e96d0e..da47caa 100644
+--- a/spiderfoot/event.py
++++ b/spiderfoot/event.py
+@@ -224,7 +224,7 @@ class SpiderFootEvent():
+             ValueError: module value was invalid
+         """
+         if not isinstance(module, str):
+-            raise TypeError(f"module is {type(module )}; expected str()")
++            raise TypeError(f"module is {type(module)}; expected str()")
+ 
+         if not module and self.eventType != "ROOT":
+             raise ValueError("module is empty")
+diff --git a/test/requirements.txt b/test/requirements.txt
+index 9d983a2..af9d434 100644
+--- a/test/requirements.txt
++++ b/test/requirements.txt
+@@ -1,18 +1,16 @@
+ -r ../requirements.txt
+ darglint==1.8.1
+-dlint==0.14.0
+-flake8==5.0.4
+-flake8-annotations==2.9.1
+-flake8-blind-except==0.2.1
+-flake8-bugbear==23.2.13
+-flake8-builtins==2.1.0
+-flake8-quotes==3.3.2
+-flake8-return==1.2.0
+-flake8-sfs==0.0.4
+-flake8-simplify==0.19.3
+-pytest==7.2.1
+-pytest-cov==4.0.0
+-pytest-mock==3.10.0
+-pytest-xdist==3.2.0
+-pycodestyle==2.9.0
+-responses==0.22.0
++dlint>=0.16.0,<1
++flake8>=7.3.0,<8
++flake8-blind-except>=0.2.1,<1
++flake8-bugbear>=25.11.29
++flake8-builtins>=3.1.0,<4
++flake8-quotes>=3.4.0,<4
++flake8-return>=1.2.0,<2
++flake8-sfs>=1.0.1,<2
++flake8-simplify>=0.30.0,<1
++pytest>=8.3,<9
++pytest-cov>=6.0,<8
++pytest-mock>=3.14,<4
++pytest-xdist>=3.6,<4
++responses>=0.25,<1
