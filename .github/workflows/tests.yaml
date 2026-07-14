@@ -15,6 +15,7 @@ jobs:
 
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
         # NOTE: 3.7 and 3.8 are end-of-life and are NOT available on current
         # ubuntu-latest runners, which was breaking CI. Original matrix was
