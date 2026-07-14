@@ -421,7 +421,7 @@ class SpiderFootHelpers():
 
         for d in wordlists:
             try:
-                with resources.open_text('spiderfoot.dicts', f"{d}.txt", errors='ignore') as dict_file:
+                with resources.files('spiderfoot.dicts').joinpath(f"{d}.txt").open('r', errors='ignore') as dict_file:
                     for w in dict_file.readlines():
                         words.add(w.strip().lower().split('/')[0])
             except BaseException as e:

@@ -527,11 +527,25 @@ class TestSpiderFootCli(unittest.TestCase):
 
         io_output = io.StringIO()
         sys.stdout = io_output
-        sfcli.do_shell("")
+        sfcli.do_shell("pwd")
         sys.stdout = sys.__stdout__
         output = io_output.getvalue()
 
         self.assertIn("Running shell command:", output)
+
+    def test_do_shell_invalid_command_should_raise(self):
+        """
+        Test do_shell(self, line) rejects lines outside the allowed charset
+        """
+        sfcli = SpiderFootCli()
+
+        io_output = io.StringIO()
+        sys.stdout = io_output
+        with self.assertRaises(ValueError):
+            sfcli.do_shell("echo hi; rm -rf /")
+        with self.assertRaises(ValueError):
+            sfcli.do_shell("")
+        sys.stdout = sys.__stdout__
 
     def test_do_clear(self):
         """

@@ -1,0 +1,248 @@
+...............s.......s.ss.s.s.sss.s..sss................s..         [100%]
+=============================== warnings summary ===============================
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_clean_user_input_invalid_input_should_raise without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_clean_user_input_should_clean_user_input without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_clean_user_input_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_clonescan without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_correlationrules_should_return_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_error_page without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_error_page_401 without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_error_page_404 without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_eventtypes_should_return_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_index without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_init without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_init_config_invalid_type_should_raise_TypeError without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_init_no_web_config_should_raise without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_modules_should_return_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_newscan without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_opts without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_optsexport_should_return_a_string without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_optsraw_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_ping_should_return_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_query_invalid_query_should_return_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_query_should_perform_sql_query without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_rerunscan_invalid_scan_id_should_return_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_rerunscanmulti without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_reset_settings_should_return_true without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_result_set_fp without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_savesettings without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_savesettings_invalid_csrf_token_should_return_an_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_savesettingsraw without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_savesettingsraw_invalid_csrf_token_should_return_an_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_correlations_export without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_element_type_discovery_should_return_a_dict without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_event_result_export_multi without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_event_result_export_should_return_bytes without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_export_json_multi without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_export_logs_invalid_scan_id_should_return_string without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_export_logs_should_return_bytes without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_history_missing_scanid_should_return_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_history_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_search_result_export without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_viz_multi_should_return_a_string without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scan_viz_should_return_a_string without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scandelete_invalid_scanid_should_return_an_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scanerrors_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scaneventresults_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scaneventresultsunique_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scaninfo without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scanlist_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scanlog_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scanopts_should_return_dict without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scanstatus_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_scansummary_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_search_base_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_search_should_return_a_list without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_start_scan_invalid_modules_should_return_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_start_scan_invalid_scanname_should_return_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_start_scan_invalid_scantarget_should_return_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_start_scan_invalid_typelist_should_return_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_start_scan_should_start_a_scan without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_start_scan_unrecognized_scantarget_type_should_return_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+test/unit/test_spiderfootwebui.py:8
+  /Users/macmini_0_16gb_1tbssd/spiderfoot-am0044/test/unit/test_spiderfootwebui.py:8: PytestWarning: usefixtures() in test/unit/test_spiderfootwebui.py::TestSpiderFootWebUi::test_stopscan_invalid_scanid_should_return_an_error without arguments has no effect
+    @pytest.mark.usefixtures
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+47 passed, 14 skipped, 61 warnings, 3 subtests passed in 0.78s
