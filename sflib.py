@@ -5,7 +5,7 @@
 #
 # Author:      Steve Micallef <steve@binarypool.com>
 #
-# Created:     26/03/2012
+# Created:     26/03/2012 (updated July,2026)
 # Copyright:   (c) Steve Micallef 2012
 # Licence:     MIT
 # -------------------------------------------------------------------------------
@@ -26,7 +26,6 @@ import urllib.error
 import urllib.parse
 import urllib.request
 from copy import deepcopy
-from datetime import datetime
 
 import cryptography
 import dns.resolver
