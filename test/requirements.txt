@@ -10,5 +10,5 @@ flake8-simplify>=0.30.0,<1
 pytest>=8.3,<9
 pytest-cov>=6.0,<8
 pytest-mock>=3.14,<4
-pytest-xdist>=3.6,<4
+pytest-xdist>=3.8.0,<4
 responses>=0.25,<1
