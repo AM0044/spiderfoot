@@ -1,24 +1,65 @@
 # Dependabot configuration
 # Docs: https://docs.github.com/code-security/dependabot/dependabot-version-updates
 version: 2
-
 updates:
-  # --- Python dependencies ---------------------------------------------------
-  # Covers every requirements file in the repo:
-  #   /                    -> requirements.txt        (runtime dependencies)
-  #   /test                -> test/requirements.txt   (pytest, flake8, plugins)
-  #   /test/acceptance     -> test/acceptance/requirements.txt (robotframework)
+  # --- Python dependencies: root -----------------------------------------
+  # requirements.txt (runtime dependencies). This is the ONLY block that
+  # tracks these packages — /test and /test/acceptance both pull them in
+  # via "-r ../requirements.txt" rather than declaring their own copies,
+  # so scanning all three directories for them was generating 3 duplicate
+  # PRs per package. Root stays unrestricted; the other two blocks below
+  # are now limited to the packages that are actually unique to them.
   - package-ecosystem: "pip"
-    directories:
-      - "/"
-      - "/test"
-      - "/test/acceptance"
+    directory: "/"
     schedule:
       interval: "weekly"
     open-pull-requests-limit: 10
     groups:
-      # Batch minor/patch bumps into one PR to keep the noise down while the
-      # codebase is being cleaned up. Majors still come as individual PRs.
+      python-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+
+  # --- Python dependencies: /test -----------------------------------------
+  # test/requirements.txt — only these packages are actually declared here;
+  # everything else in the file comes from the root include above.
+  - package-ecosystem: "pip"
+    directory: "/test"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-name: "dlint"
+      - dependency-name: "flake8"
+      - dependency-name: "flake8-blind-except"
+      - dependency-name: "flake8-bugbear"
+      - dependency-name: "flake8-builtins"
+      - dependency-name: "flake8-quotes"
+      - dependency-name: "flake8-sfs"
+      - dependency-name: "flake8-simplify"
+      - dependency-name: "pytest"
+      - dependency-name: "pytest-cov"
+      - dependency-name: "pytest-mock"
+      - dependency-name: "pytest-xdist"
+      - dependency-name: "responses"
+    groups:
+      python-minor-and-patch:
+        update-types:
+          - "minor"
+          - "patch"
+
+  # --- Python dependencies: /test/acceptance ------------------------------
+  # test/acceptance/requirements.txt — same story, only robotframework
+  # packages are unique to this file.
+  - package-ecosystem: "pip"
+    directory: "/test/acceptance"
+    schedule:
+      interval: "weekly"
+    open-pull-requests-limit: 10
+    allow:
+      - dependency-name: "robotframework"
+      - dependency-name: "robotframework-seleniumlibrary"
+    groups:
       python-minor-and-patch:
         update-types:
           - "minor"
