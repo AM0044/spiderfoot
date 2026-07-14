@@ -21,4 +21,4 @@ networkx>=3.6.1,<4
 cryptography>=49.0.0,<50
 publicsuffixlist>=0.9.3,<2
 openpyxl>=3.1.2,<4
-pyyaml>=6.0.1,<7
+pyyaml>=6.0.3,<7
