@@ -17,13 +17,12 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # NOTE: 3.7 and 3.8 are end-of-life and are NOT available on current
-        # ubuntu-latest runners, which was breaking CI. Original matrix was
-        # ["3.7", "3.8", "3.9", "3.10"]. Adjust this to whatever Python range
-        # this fork officially supports (keep it in sync with the README badge).
-        python-version: ["3.10", "3.11", "3.12", "3.13", "3.14"]
+         # NOTE: 3.10 was dropped in Jul 2026: networkx>=3.6.1 requires
+         # Python >=3.11, and 3.10 reaches end-of-life in Oct 2026 anyway.
+         # (3.7-3.9 were dropped earlier for the same EOL reason.)
+         python-version: ["3.11", "3.12", "3.13", "3.14"]
         os: [ubuntu-latest, macos-latest]
-
+        
     steps:
       # Actions pinned to full commit SHA (Scorecard: Pinned-Dependencies)
       # and upgraded from deprecated Node-16 majors.
