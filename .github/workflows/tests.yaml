@@ -17,10 +17,10 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-         # NOTE: 3.10 was dropped in Jul 2026: networkx>=3.6.1 requires
-         # Python >=3.11, and 3.10 reaches end-of-life in Oct 2026 anyway.
-         # (3.7-3.9 were dropped earlier for the same EOL reason.)
-         python-version: ["3.11", "3.12", "3.13", "3.14"]
+        # NOTE: 3.10 was dropped in Jul 2026: networkx>=3.6.1 requires
+        # Python >=3.11, and 3.10 reaches end-of-life in Oct 2026 anyway.
+        # (3.7-3.9 were dropped earlier for the same EOL reason.)
+        python-version: ["3.11", "3.12", "3.13", "3.14"]
         os: [ubuntu-latest, macos-latest]
         
     steps:
