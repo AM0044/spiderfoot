@@ -3,5 +3,5 @@
 # then:
 #   robot --variable BROWSER:Firefox --outputdir results example.robot
 -r ../requirements.txt
-robotframework==7.4.2
+robotframework==7.5
 robotframework-seleniumlibrary==6.9.0
